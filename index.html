@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Açaí da Bela</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+  <a href=""></a>
+
+  <header class="acai-banner">
+    <div class="banner-overlay">
+      <img src="img/açai logo.jpg" alt="Logo Açaí da Bela" class="logo" />
+      <h1>Açaí da Bela</h1>
+      <p>O melhor açaí da cidade</p>
+    </div>
+  </header>
+
+  <section class="busca">
+    <input type="text" id="campoBusca" placeholder="🔍 Buscar açaí..." />
+  </section>
+
+  <!-- BARRA DE CATEGORIAS -->
+  <div id="categorias">
+    <button class="btn-categoria" data-categoria="todos">Todos</button>
+    <button class="btn-categoria" data-categoria="barca">Barca</button>
+    <button class="btn-categoria" data-categoria="monte seu copo">
+      Monte seu Copo
+    </button>
+    <button class="btn-categoria" data-categoria="fondue">Fondue</button>
+    <button class="btn-categoria" data-categoria="picolé">Picolé</button>
+  </div>
+
+  <main>
+    <section class="produtos" id="listaProdutos">
+      <!-- Cards serão gerados dinamicamente pelo JS -->
+    </section>
+  </main>
+
+  <!-- Modal de montagem -->
+  <div id="modalMontagem" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close-btn" id="fecharModal">&times;</span>
+      <h2 id="tituloProdutoModal">Monte seu Açaí 🍧</h2>
+      <form id="formMontagem">
+        <input type="hidden" id="nomeProdutoBase" />
+        <input type="hidden" id="precoBase" />
+
+        <!-- Container onde serão carregados os complementos -->
+        <div id="containerComplementos">
+          <!-- Complementos carregados aqui via JS -->
+        </div>
+
+        <button type="submit" class="btn-finalizar">Adicionar ao Carrinho</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Carrinho -->
+  <aside id="carrinho" style="display:none;">
+    <h3>🛒 Seu Pedido</h3>
+    <ul id="lista-pedidos"></ul>
+    <p id="total">Total: R$ 0,00</p>
+    <button id="confirmarPedido" class="btn-finalizar">Confirmar Pedido</button>
+  </aside>
+
+  <!-- Formulário final -->
+  <div id="formularioFinal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close-btn" id="fecharFinal">&times;</span>
+      <h2>Finalizar Pedido</h2>
+      <form id="formFinal">
+        <label>
+          Seu nome:
+          <input type="text" id="nomeCliente" placeholder="Seu nome" required />
+        </label>
+
+        <label>
+          Endereço de entrega:
+          <input
+            type="text"
+            id="enderecoCliente"
+            placeholder="Rua, número, bairro"
+            required
+          />
+        </label>
+
+        <label>
+          Método de Entrega:
+          <select id="metodoEntrega" required>
+            <option value="">Selecione...</option>
+            <option value="Entrega">Entrega</option>
+            <option value="Retirada">Retirada</option>
+          </select>
+        </label>
+
+        <label>
+          Método de Pagamento:
+          <select id="metodoPagamento" required>
+            <option value="">Selecione...</option>
+            <option value="Pix">Pix</option>
+            <option value="Cartão">Cartão</option>
+            <option value="Dinheiro">Dinheiro</option>
+          </select>
+        </label>
+
+        <label>
+          Telefone:
+          <input type="tel" id="telefoneCliente" placeholder="Telefone" required />
+        </label>
+
+        <p id="resumoTotal">Total: R$ 0,00</p>
+        <button type="submit" class="btn-finalizar">Confirmar Compra</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <h3>Açaí da Bela 🍧</h3>
+      <p>O melhor açaí da cidade, feito com amor e qualidade!</p>
+      <ul class="socials">
+        <li>
+          <a
+            href="https://www.instagram.com/acaidabella_campinas"
+            target="_blank"
+            ><i class="fab fa-instagram"></i> Instagram</a
+          >
+        </li>
+        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+        <li><a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+        <li><a href="admin.html">admin</a></li>
+      </ul>
+      <p class="copy">&copy; 2025 Açaí da Bela. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
